@@ -1,4 +1,3 @@
-
 const Pokemon = ( { data }) => {
     return (
         <p>Lala</p>
