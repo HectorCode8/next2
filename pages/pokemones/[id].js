@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 
 const Pokemon = ( { data }) => {
     const router = useRouter()
-    if(router.isFallback) return <div>Cargando...</div>
     return (
         <div>
             <h1>{data.name} numero #{data.id}</h1>
@@ -30,7 +29,7 @@ export const getStaticPaths = async () => {
     ]
     return {
         paths,
-        fallback: true
+        fallback: 'blocking'
     }
 }
 
