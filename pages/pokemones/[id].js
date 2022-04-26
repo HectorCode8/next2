@@ -1,6 +1,13 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 const Pokemon = ( { data }) => {
     return (
-        <p>Lala</p>
+        <div>
+            <h1>{data.name} numero #{data.id}</h1>
+            <Image src={data.sprites.front_default} width={400} height={400} alt={data.name} />
+            <Link href='/'>Volver al inicio</Link>
+        </div>
     )
 }
 
