@@ -1,13 +1,20 @@
-const add = () => 2 + 2
+import { render, screen} from '@testing-library/react'
+import Index from '../pages/index'
+
 
 describe('Index', () => {
 
     describe('Components', () => {
         it('se renderiza', () => {
-            
+            const { getByTestId } = render(
+                <Index pokemones={[]} />
+            )
+
+            const paragraph = getByTestId('titulo')
+            expect(paragraph).toBeInTheDocument()
         })
     })
-    it('suma 2 + 2', () => {
-        expect(add()).toBe(4);
+describe('getStaticProps', () => {
+
     })
 })
